@@ -1,14 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 :root {
-  --color-dark: hsl(252, 30%, 17%);
-  --color-light: hsl(252, 30%, 95%);
+  --primary-color-hue: 252;
+  --dark-color-light: 17%;
+  --light-color-light: 95%;
+  --white-color-light: 100%;
+
+
+  --color-dark: hsl(252, 30%, var(--dark-color-light));
+  --color-light: hsl(252, 30%, var(--light-color-light));
   --color-gray: hsl(252, 15%, 65%);
-  --color-primary: hsl(252, 75%, 60%);
+  --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
   --color-secondary: hsl(252, 100%, 90%);
   --color-success: hsl(120, 95%, 65%);
   --color-danger: hsl(0, 95%, 65%);
-  --color-white: hsl(252, 30%, 100%);
+  --color-white: hsl(252, 30%, var(--white-color-light));
   --color-black: hsl(252, 30%, 10%);
 
   --border-radius: 2rem;
@@ -128,7 +134,7 @@ main .container .left .profile {
   background: var(--color-white);
   border-radius: var(--card-border-radius);
   display: flex;
-  color: var(--color-black);
+  color: var(--color-dark);
   align-items: center;
   column-gap: 1rem;
   width: 100%;
@@ -170,7 +176,7 @@ main .container .left .profile {
 .left .sidebar h3 {
   margin-left: 1.5rem;
   font-size: 1rem;
-  color: var(--color-black);
+  color: var(--color-dark);
 }
 .left .sidebar .active {
   background: var(--color-light);
@@ -480,6 +486,7 @@ main .container .left .profile {
   padding: 3rem;
   border-radius: var(--card-border-radius);
   width: 50%;
+  box-shadow: 0 0 1rem var(--color-primary);
 }
 .customize-theme .font-size {
   margin-top: 5rem;
@@ -611,6 +618,9 @@ main .container .left .profile {
   .left .btn {
     display: none;
   }
+  .customize-theme .card{
+    width: 80vw;
+  }
 }
 
 /* media queries for mobile phones */
@@ -645,5 +655,8 @@ main .container .left .profile {
   }
   main .container .right{
     display: none;
+  }
+  .customize-theme .card{
+    width: 92vw;
   }
 }
